@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "/index" , controller: "users", action:"index"
   post "/create", controller: "users", action:"create"
   delete "/delete/:id", controller: "users", action:"delete"
-  put "/modify/:id", controller: "users", action:"update"
+  put "/update/:id", controller: "users", action:"update"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

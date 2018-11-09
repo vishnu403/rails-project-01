@@ -1,12 +1,12 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
+  # test "testing for reading all users from db" do
+  #   get "index"
+  #   assert_response :success
   # end
-  Describe "should return all records from the database" do
-    it "should return all records for users" do
-      expect( User.index()).to eql([])
-    end
-  end
+  # test "testing for updating user from db" do
+  #
+  # end
+
 end
