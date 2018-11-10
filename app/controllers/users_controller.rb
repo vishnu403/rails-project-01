@@ -6,17 +6,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(allowed_params)
-    render :json => ( @user.save ? "created": "not created")
+    render :json => ( @user.save ? @user:@user.errors)
   end
 
   def update
     @user = User.find(params[:id])
-    render :json => ( @user.update(allowed_params) ? "updated": "not updated")
+    render :json => ( @user.update(allowed_params) ? User.find(params[:id]) : @user.errors)
   end
 
   def delete
     @user = User.find(params[:id])
-    render :json => ( @user.destroy ? "deleted": "not deleted")
+    @user = @user.destroy
+    render :json => ( @user ? @user : "not deleted")
   end
 
   private
